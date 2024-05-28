@@ -41,7 +41,7 @@ worker.run= function(_block_id){
 					
 								
 				opt=eval(code); // This is where the magic happens.
-				if(opt!=undefined) show(opt);
+				if(opt!=undefined) show(opt+'');
 				
 	
 				const end_time_eval = Date.now();

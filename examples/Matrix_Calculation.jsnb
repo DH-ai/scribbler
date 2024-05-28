@@ -1,0 +1,104 @@
+{
+  "metadata": {
+    "name": "Matrix Calculation",
+    "language_info": {
+      "name": "JavaScipt",
+      "version": "8.0"
+    }
+  },
+  "jsnbversion": "v0.1",
+  "cells": [
+    {
+      "code": "<h1>Matrix Computation</h1>\n<span style=\"font-size:20px\" >Tips for Effective use without error</span>\n<ul style=\"list-style-type: circle;\">\n    <li style=\"list-style-type: circle;\" >Simple functionn like multiplication and addition were implemented and rest are included from a library called math.js</li>\n    <li style=\"list-style-type: circle;\">    For creating perfect matrix always follow the rule that [[element]] represent a 1x1 array and [[1][2]] is 2x1 array rest follows</li>\n    <li style=\"list-style-type: circle;\">You can change the matrix here run all cell at once to see your output </li>\n    <li style=\"list-style-type: circle;\">To change the matrix of which you want to inverse of change it as a input parameter in function call </li>\n    <li style=\"list-style-type: circle;\">This notebook is created to showcase one more use case of scribbler as a independent platform to check your algorithm before implementing them</li>\n\n\n\n</ul>\n\n",
+      "status": "",
+      "output": "<h1>Matrix Computation</h1>\n<span style=\"font-size:20px\">Tips for Effective use without error</span>\n<ul style=\"list-style-type: circle;\">\n    <li style=\"list-style-type: circle;\">Simple functionn like multiplication and addition were implemented and rest are included from a library called math.js</li>\n    <li style=\"list-style-type: circle;\">    For creating perfect matrix always follow the rule that [[element]] represent a 1x1 array and [[1][2]] is 2x1 array rest follows</li>\n    <li style=\"list-style-type: circle;\">You can change the matrix here run all cell at once to see your output </li>\n    <li style=\"list-style-type: circle;\">To change the matrix of which you want to inverse of change it as a input parameter in function call </li>\n    <li style=\"list-style-type: circle;\">This notebook is created to showcase one more use case of scribbler as a independent platform to check your algorithm before implementing them</li>\n\n\n\n</ul>\n\n",
+      "type": "html"
+    },
+    {
+      "code": "load_script(\"https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.3.0/math.js\",true);",
+      "status": "[71]<br><span style=\"font-size:8px\">2ms<span></span></span>",
+      "output": "{} <br>",
+      "type": "code"
+    },
+    {
+      "code": "<h3> Here you give input of the matrix</h3>\n<div></div>",
+      "status": "",
+      "output": "<h3> Here you give input of the matrix</h3>\n<div></div>",
+      "type": "html"
+    },
+    {
+      "code": "matrix1 = [\n  [11,2,31],\n  [4,51,6],\n  [7,8,19]\n];\nmatrix2 = [\n  [1,2,3],\n  [4,5,6],\n  [7,8,9]\n];\n// Here you can define 2 matrices and for example we took matrices of 3x3 order\nshow(matrix1);\nshow(matrix2);",
+      "status": "[72]<br><span style=\"font-size:8px\">0ms<span></span></span>",
+      "output": "[\n  [\n    11,\n    2,\n    31\n  ],\n  [\n    4,\n    51,\n    6\n  ],\n  [\n    7,\n    8,\n    19\n  ]\n] <br>[\n  [\n    1,\n    2,\n    3\n  ],\n  [\n    4,\n    5,\n    6\n  ],\n  [\n    7,\n    8,\n    9\n  ]\n] <br>",
+      "type": "code"
+    },
+    {
+      "code": "<h2 id =\"sd\">Addition</h2> ",
+      "status": "",
+      "output": "<h2 id=\"sd\">Addition</h2> ",
+      "type": "html"
+    },
+    {
+      "code": "addition = function (mat1, mat2) {\n            if (!mat1[0] || !mat2[0] || mat1[0].length !== mat2[0]?.length || mat1.length !== mat2.length) {\n                return \"Can't add matrices; they are not of the same order.\";\n            }\n\n            let row = mat1.length;\n            let col = mat1[0].length;\n            let result = [];\n\n            for (let i = 0; i < row; i++) {\n                let help = [];\n\n                for (let j = 0; j < col; j++) {\n                    help[j] = mat1[i][j] + mat2[i][j];\n                }\n\n                result.push(help);\n            }\n\n            return result;\n        };\nresult = addition(matrix1,matrix2);\nshow (result)\n",
+      "status": "[74]<br><span style=\"font-size:8px\">1ms<span></span></span>",
+      "output": "[\n  [\n    12,\n    4,\n    34\n  ],\n  [\n    8,\n    56,\n    12\n  ],\n  [\n    14,\n    16,\n    28\n  ]\n] <br>",
+      "type": "code"
+    },
+    {
+      "code": "<h2 id =\"sd\">Subtraction<h2> ",
+      "status": "",
+      "output": "<h2 id=\"sd\">Subtraction</h2><h2> </h2>",
+      "type": "html"
+    },
+    {
+      "code": "subtract = function (mat1, mat2) {\n            if (!mat1[0] || !mat2[0] || mat1[0].length !== mat2[0]?.length || mat1.length !== mat2.length) {\n                return \"Can't subtract matrices; they are not of the same order.\";\n            }\n\n            let row = mat1.length;\n            let col = mat1[0].length;\n            let result = [];\n\n            for (let i = 0; i < row; i++) {\n                let help = [];\n\n                for (let j = 0; j < col; j++) {\n                    help[j] = mat1[i][j] - mat2[i][j];\n                }\n\n                result.push(help);\n            }\n\n            return result;\n        };\nresult = subtract(matrix1,matrix2);\nshow (result)\n",
+      "status": "[75]<br><span style=\"font-size:8px\">0ms<span></span></span>",
+      "output": "[\n  [\n    10,\n    0,\n    28\n  ],\n  [\n    0,\n    46,\n    0\n  ],\n  [\n    0,\n    0,\n    10\n  ]\n] <br>",
+      "type": "code"
+    },
+    {
+      "code": "<h2>Multiplication</h2>",
+      "status": "",
+      "output": "<h2>Multiplication</h2>",
+      "type": "html"
+    },
+    {
+      "code": "multiply = function (mat1, mat2) {\n            if (!mat1[0] || !mat2[0] || mat1[0].length !== mat2.length ) {\n                return \"Can't multiply matrices; no. of coloumn of first matrices is not equals to no. of rows of 2nd matrices\";\n            }\n\n            let row = mat1.length;\n            let col = mat1[0].length;\n            let result = [];\n\n            for (let i = 0; i < row; i++) {\n                let help = [];\n\n                for (let j = 0; j < col; j++) {\n                    help[j] = mat1[i][j] *  mat2[j][i];\n                }\n\n                result.push(help);\n            }\n\n            return result;\n        };\nresult = multiply(matrix1,matrix2)\n\t\t\t\t \n\t\t\t\t \n\t\t\t\t \n\t\t\t\t\nshow (result)\n",
+      "status": "[78]<br><span style=\"font-size:8px\">0ms<span></span></span>",
+      "output": "[\n  [\n    11,\n    8,\n    217\n  ],\n  [\n    8,\n    255,\n    48\n  ],\n  [\n    21,\n    48,\n    171\n  ]\n] <br>",
+      "type": "code"
+    },
+    {
+      "code": "<h2>Determinant </h2>",
+      "status": "",
+      "output": "<h2>Determinant </h2>",
+      "type": "html"
+    },
+    {
+      "code": "detq=function(mat){\n\tif(!mat[0] || mat[0].length !==mat.length){\n\t  return \"ERROR: Given matrix is not a sqare matrix\"\n\t}\n\treturn math.det(mat);\n\n}\n\nshow(detq(matrix1))",
+      "status": "[76]<br><span style=\"font-size:8px\">0ms<span></span></span>",
+      "output": "-12 <br>",
+      "type": "code"
+    },
+    {
+      "code": "<h2>Inverse</h2>",
+      "status": "",
+      "output": "<h2>Inverse</h2>",
+      "type": "html"
+    },
+    {
+      "code": "inv=function(mat){\n\tif(!mat[0] || mat[0].length !==mat.length){\n\t  return \"ERROR: Given matrix is not a sqare matrix\";\n\t}\n  \tif (math.det(mat)==0){\n\t  return \"Given matrices has determinant value 0\";\n\t}\n\treturn math.inv(mat);\n\n}\n\nshow(inv(matrix1))",
+      "status": "[77]<br><span style=\"font-size:8px\">1ms<span></span></span>",
+      "output": "[\n  [\n    -76.75000000000257,\n    -17.500000000000586,\n    130.75000000000438\n  ],\n  [\n    2.8333333333334285,\n    0.6666666666666884,\n    -4.833333333333496\n  ],\n  [\n    27.083333333334238,\n    6.166666666666873,\n    -46.08333333333487\n  ]\n] <br>",
+      "type": "code"
+    },
+    {
+      "code": "<h2>And so much more for you to do !!</h3>",
+      "status": "",
+      "output": "<h2>And so much more for you to do !!</h2>",
+      "type": "html"
+    }
+  ],
+  "source": "https://github.com/gopi-suvanam/jsnb",
+  "run_on_load": false
+}
