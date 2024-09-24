@@ -5,9 +5,11 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<link rel="icon"  href="favicon.ico">
-		<meta name="description" content="JSNB: A notebook for experimenting in JavaScript. Play with html and javascript using simple interface (without servers and backend deployment). All the computation happens in your browser.">
+		<link rel="manifest" href="/manifest.json">
+
+		<meta name="description" content="Scribbler is a notebook, online compiler for experimenting in JavaScript. Play with html and javascript using simple interface (without servers and backend deployment). All the computation happens in your browser.">
 		<script>global=globalThis</script>
-		<title>Scribbler App for JavaScript Notebooks</title>
+		<title>Scribbler App for JavaScript Notebook and Online Compiler</title>
 
 		<!-- Styling using pico.css and some custome css -->
 		<link rel="stylesheet" href="css/pico.min.css">
@@ -32,7 +34,7 @@
 	      <details role="list" dir="ltr">
 	      <summary tabindex="0" aria-haspopup="listbox">File</summary>
 	      <ul role="listbox">
-	        <li><a href="#" target="_blank">New Blank NB</a></li>
+	        <li><a href="./#" target="_blank">New Blank NB</a></li>
 	        <li><a data-target="fileNamesModal" onClick="toggleModal(event);openFileNamesModal()" >Open Local File (Ctrl-O)</a></li>
 		<li><a onclick="saveLocalFile()">Save Locally (Ctrl-S)</a><hr></li>
 		<li><a onclick="load_file_click()">Upload NB</a></li>
@@ -52,7 +54,7 @@
 	      <summary tabindex="0" aria-haspopup="listbox">Edit</summary>
 	      <ul role="listbox">
 	        <li><a onclick="insert_cell('code')">Insert code cell</a></li>
-	        <li><a onclick="insert_cell('html')">Insert html cell</a></li>
+	        <li><a onclick="insert_cell('html')">Insert doc cell</a></li>
 	        <li><a onclick="insert_cell('style')">Insert style cell</a><hr></li>
 	        <li><a data-target="options" onClick="toggleModal(event)">Options</li>
 	        <li><a onclick="event.preventDefault();break_sandbox()" >Trust the NB</a></li>
@@ -78,7 +80,7 @@
 	        <li><a href="https://scribbler.live/samples.html" target='_blank'>Gallery</a></li>
 	        <li><a href="https://scribbler.live/tutorials/" target='_blank'>Tutorials</a></li>
 	        <li>
-	   	<a href="https://forms.gle/AFQBxF9RijEVTFP57" target="_blank" >Reach out</a> 
+	   	<a href="https://github.com/gopi-suvanam/scribbler/issues/new/choose" target="_blank" >Reach out</a> 
 	    </li>
 	    <li>
 	   	<a href="https://github.com/gopi-suvanam/jsnb/" target="_blank" >Source</a> 
@@ -235,7 +237,7 @@
   <script>
   	insitialize_page(); <!-- Load the keyboard shortcuts and initialization scripts -->
   </script>
-  <!-- Google Analytics for Understanding Usage -->
+	  <!-- Google Analytics for Understanding Usage -->
 	<script  src="https://www.googletagmanager.com/gtag/js?id=G-45Z12S039Z" async></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
@@ -244,5 +246,5 @@
 	
 	  gtag('config', 'G-45Z12S039Z');
 	</script>
-
+	
  </html>

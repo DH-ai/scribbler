@@ -3,12 +3,17 @@
 #### [Hello World](https://app.scribble.live) • [Docs](https://scribbler.live/docs)  • [Gallery](https://scribbler.live/samples.html) • [Tutorials](https://scribbler.live/tutorials) • [Discord](https://discord.com/invite/uxNSsWunwU) 
 
 
-# Scribbler: JavaScript Notebook. [Use here (No login required)](https://app.scribbler.live/#github:gopi-suvanam/jsnb/examples/Hello-world.jsnb). 
+# Scribbler: JavaScript Notebook. 
+### _Simple Interface for Experimenting in JavaScript. Developed for Open Source using Open Source_
+### [Use here (No login required)](https://app.scribbler.live/#github:gopi-suvanam/jsnb/examples/Hello-world.jsnb). 
 
-Notebook for javascript experimentation (in the browser). Overview:
-- [x] Easy to use javascript experimentation tool. Runs without backend (node.js/npm/pip install/ngnix etc etc).  Can be used online or offline.
-- [x] Has a minimalistic UI to put focus on user generated code/content. It is light-weight as it uses minimal external libraries for styling.
-- [x] Comes pre-loaded with Plotly, D3 and DI-Libs for power usage. Thirdparty libaries/modules can be easily loaded.
+Browser-based JavaScript Notebook:
+- [x] Easy experimentation with no backend setup (no Node.js or npm required).
+- [x] Accessible online or offline.
+- [x] Minimalistic UI for focused coding.
+- [x] Lightweight with minimal external libraries.
+- [x] Preloaded with Plotly and DI-Libs for enhanced data visualization and functionality.
+- [x] Easily extensible with third-party libraries and modules
 
 [Join Our Discord Server](https://discord.com/invite/uxNSsWunwU)
 
@@ -30,11 +35,33 @@ Notebook for javascript experimentation (in the browser). Overview:
 4. For self-hosted use, you can put the folder in web directory of the server and use the link to index.html.
 5. Several examples are available in the folder examples/ of this repository. Check the [README in that folder](./examples/README.md) for links. They can be used as boilerplates for further experimentation.
 
+To start simply write JavaScript:
+```javascript
+function greet(x){
+    return ("Hello "+x);
+}
+greet("World")
+```
+
+You can plot graphs and visualize easily:
+```javascript
+//The single line below plots a sine graph
+range(1,10,0.01).map(Math.sin).plot();
+```
+A few starting notebooks for further experimentation:
+1. [Hello-world for JavaScript Notebook](https://app.scribbler.live/#./examples/Hello-world.jsnb)
+2. [For-loop vs Reduce Performance Comparision](https://app.scribbler.live/#./examples/Timing-experiment.jsnb)
+3. [Plotly graphs Example in JavaScript](https://app.scribbler.live/#./examples/Plotly-Example.jsnb)
+4. [Option Pricing using Black-Scholes](https://app.scribbler.live/#./examples/Black-Scholes.jsnb)
+5. [Dynamic System Simulation - Bouncing Ball on Moving Boundary](https://app.scribbler.live/#./examples/Dynamic-Simulation.jsnb)
+6. [Numerical Recipes in JavaScript](https://app.scribbler.live/#./examples/Numerical-Analysis-Recipes.jsnb)
+7. [Machine Learning Using Brain.js](https://app.scribbler.live/#./examples/Decentralized-ML-Model-Storage.jsnb)
+
 ## Features
 - **Cells:**
-    - The notebook consists of cells. Each cell will have user inputted html/code and an output. There is a menu at the top right corner of the cell (or above the cell in case of smaller screens).
-    - There are two types of cells: code and html. The type of cell can be toggled using a switch in the cell menu.
-    - For code cells input and output are both shown. For html cells, input is hidden and opens up if you click the output.
+    - The notebook consists of cells. Each cell will have user inputted doc/code and an output. There is a menu at the top right corner of the cell (or above the cell in case of smaller screens).
+    - There are two types of cells: code and doc. The type of cell can be toggled using a switch in the cell menu.
+    - For code cells input and output are both shown. For doc cells, input is hidden and opens up if you click the output.
 - **Cell Buttons:**
     - To get the output of a cell press play ► button on the cell menu (or Cmd/Ctrl-Enter on keyboard after selecting the cell).
     - The cell menu also has buttons for moving the cell up ↑, down ↓, adding a new cell ✛ and deleting the current cell ☓.
@@ -51,7 +78,7 @@ Notebook for javascript experimentation (in the browser). Overview:
     - There are two special functions included in the app: scrib.show(...) for showing some string in the output box. scrib.currCell() for getting the element corresponding to the output cell.
     - Keyboard Shortcuts: Several keyboard shortcuts for running/dowloading/adding cells/deleting cells etc. See [DOCS](DOCS.md#keyboard-shortcuts) for details
 - **External Libraries:**    
-    - [D3](https://github.com/d3/d3) and [Plotly](https://github.com/plotly/plotly.js) (for data manipulation and charting), and sister project [DI-Libs](https://github.com/gopi-suvanam/di-libs) are preloaded and can be used in the notebooks without seperately loading. They can also be reloaded using reload_script.
+    - [Plotly](https://github.com/plotly/plotly.js) (for charting), and Scribbler's sister project [DI-Libs](https://github.com/gopi-suvanam/di-libs) are preloaded and can be used in the notebooks without seperately loading. They can also be reloaded using scrib.reloadScript.
     - For adding more functionality import an external library through dynamic import() or through scrib.loadScript(CDN_LINK).
 
 ## Use cases
@@ -79,9 +106,10 @@ The tool does not store data on cloud as it is intended to be a fully open sourc
 - ObservableHQ is similar in principle to Scribbler but it a walled garden and not an open source tool. Also it uses relies on React framework whereas Scribbler is framework agnostic.
 
 ## Acknowledgements
-- Uses [Codemirror](https://github.com/codemirror) for formatting the code area
+- Uses [Codemirror](https://github.com/codemirror) for formatting the code area.
 - Uses [Pico CSS](https://github.com/picocss/pico) for styling.
-- Comes loaded with [D3](https://github.com/d3/d3) and [Plotly](https://github.com/plotly/plotly.js) for charting.
+- Comes loaded with [Plotly](https://github.com/plotly/plotly.js) for charting.
+- Markdown support comes from [Markedjs](https://github.com/markedjs/marked).
 
 ## Links
 

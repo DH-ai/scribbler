@@ -4,7 +4,6 @@ scrib.TIMEOUT_FOR_BLOCKING_CALLS=5000;
 	
 
 
-
 scrib.isInIFrame = function() {
     try {
         return window.self !== window.top;
@@ -12,6 +11,23 @@ scrib.isInIFrame = function() {
         return true;
     }
 }
+
+
+scrib.inputText = function() {
+  return new Promise((resolve) => {
+    const inputElement = document.createElement('input');
+    inputElement.type = 'text';
+    inputElement.addEventListener('keypress', (event) => {
+      if (event.key === 'Enter') {
+        resolve(inputElement.value);
+        inputElement.setAttribute('readonly', true); // make it uneditable
+      }
+    });
+    scrib.currCell().appendChild(inputElement);
+    inputElement.focus();
+  });
+};
+
 
 
 scrib.showInDom=function(output,...objs){
@@ -74,6 +90,13 @@ scrib.loadScript = function(url,async){
 	}
 
 }
+
+load_script=(...args)=>{
+	scrib.show("<span style='color:orange'>Warning! load_script() is being deprecated. Use scrib.loadScript().</span>");
+	scrib.loadScript(...args);
+}	
+
+
 
 scrib.reloadScript = function(url,async){
 	if(url.includes('?')) url=url+'&' +(Math.random() + 1).toString(36).substring(7);
@@ -207,7 +230,7 @@ scrib.uploadFile= async function(type){
   return(x);
  
 }
-
+load_file=scrib.uploadFile;
 
 var parse_response=async response => {
         const isJson = response.headers.get('content-type')?.includes('application/json');
