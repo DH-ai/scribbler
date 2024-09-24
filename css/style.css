@@ -2,14 +2,14 @@
 	color:dark-grey;
 
 	height: 100%;
-	    display: flex;
-	    flex-direction: column;
-	    font-family:  "Roboto", sans-serif;
+	display: flex;
+	flex-direction: column;
+	font-family:  "Roboto", sans-serif;
 }
 
 
 h1, h2, h3, h4, h5, h6, p, a, span, div, article,textarea, td {
-	font-family: "Inter", sans-serif;
+	font-family: monospace;
 	
 }
 
