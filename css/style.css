@@ -8,8 +8,8 @@
 }
 
 
-h1, h2, h3, h4, h5, h6, p, a, span, div, article,textarea, td {
-	font-family: monospace;
+h1, h2, h3, h4, h5, h6, p, a, div, article,textarea, td {
+	font-family: "Roboto", sans-serif;
 	
 }
 
@@ -104,7 +104,7 @@ ul[role=listbox]{
 .CodeMirror {
 	/* font-family: Arial, monospace !important;  */
 	font-size: 18px !important; 
-	border: 0.5px solid #5f6973;
+	border: 0.5px solid #33302a;
 	border-radius: 0px;
 	margin:10px;
 	height: auto !important;
